@@ -1,0 +1,1502 @@
+{
+  "swagger": "2.0",
+  "host": "localhost:9555",
+  "schemes": [
+    "https"
+  ],
+  "info": {
+    "title": "Card gift Info service APIs",
+    "version": "1.0.0"
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  "basePath": "/rest/service",
+  "paths": {
+    "/cardDetails": {
+      "get": {
+        "operationId": "cardDetails",
+        "tags": [
+          "getCardDetails"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/RequestBody"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseBody"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ExceptionResponseBody"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ExceptionResponseBody"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ExceptionResponseBody"
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic"
+    }
+  },
+  "parameters": {
+    "RequestBody": {
+      "in": "body",
+      "name": "Request Body",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/RequestBody"
+      }
+    }
+  },
+  "definitions": {
+    "RequestBody": {
+      "description": "Request Body",
+      "type": "object",
+      "properties": {
+        "headerRequest": {
+          "$ref": "#/definitions/HeaderRequest"
+        },
+        "requestInteroperabilityPropertyBlock": {
+          "$ref": "#/definitions/RequestInteroperabilityPropertyBlock"
+        },
+        "PersonData": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 1,
+          "properties": {
+            "personSubTypeCode": {
+              "type": "string",
+              "maxLength": 2,
+              "maxProperties": 1
+            },
+            "internalId": {
+              "type": "string",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "personId": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "personId2": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "personName": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "shortName": {
+              "type": "string",
+              "maxLength": 26,
+              "maxProperties": 1
+            },
+            "personClass": {
+              "type": "string",
+              "maxLength": 18,
+              "maxProperties": 1
+            },
+            "kycProfileCode": {
+              "type": "string",
+              "maxLength": 2,
+              "maxProperties": 1
+            },
+            "kycFlag": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "kycRefreshDate": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "domicileBranchCode": {
+              "type": "string",
+              "maxLength": 8,
+              "maxProperties": 1
+            },
+            "economySector": {
+              "type": "string",
+              "maxLength": 2,
+              "maxProperties": 1
+            },
+            "domicileCountryCode": {
+              "type": "string",
+              "maxLength": 3,
+              "maxProperties": 1
+            },
+            "language": {
+              "type": "string",
+              "maxLength": 2,
+              "maxProperties": 1
+            },
+            "comment": {
+              "type": "string",
+              "maxLength": 60,
+              "maxProperties": 1
+            },
+            "personExclusivityOwnerId": {
+              "type": "string",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "tageticCode": {
+              "type": "string",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "b2AssetClass": {
+              "type": "string",
+              "maxLength": 2,
+              "maxProperties": 1
+            },
+            "marketingLetter": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "emailPrivacyFlag": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "smsPrivacyFlag": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "phonePrivacyFlag": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "mailPrivacyFlag": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "groupCustomerSince": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "wclSDNCode": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "clearedByComplianceCode": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "pepListed": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "wclId": {
+              "type": "string",
+              "maxLength": 7,
+              "maxProperties": 1
+            },
+            "wclCategoryCode": {
+              "type": "string",
+              "maxLength": 2,
+              "maxProperties": 1
+            },
+            "wclSubcategoryCode": {
+              "type": "string",
+              "maxLength": 2,
+              "maxProperties": 1
+            },
+            "personLifecycle": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "personLifecycleChgReason": {
+              "type": "string",
+              "maxLength": 2,
+              "maxProperties": 1
+            },
+            "lifecycleChangedByLogin": {
+              "type": "string",
+              "maxLength": 8,
+              "maxProperties": 1
+            },
+            "lifecycleChangedOn": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "personsOfficer1Login": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "personsOfficer2Login": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "personsOfficer3Login": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "personEnteredOnDate": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "personEnteredByLogin": {
+              "type": "string",
+              "maxLength": 8,
+              "maxProperties": 1
+            },
+            "personEntryBranchCode": {
+              "type": "string",
+              "maxLength": 8,
+              "maxProperties": 1
+            },
+            "lastChangedOn": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "lastChangedByLogin": {
+              "type": "string",
+              "maxLength": 8,
+              "maxProperties": 1
+            },
+            "lastChangedInBranchCode": {
+              "type": "string",
+              "maxLength": 8,
+              "maxProperties": 1
+            }
+          }
+        },
+        "ReusableAddressDetails": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 1,
+          "properties": {
+            "addressCode": {
+              "type": "string",
+              "maxLength": 16,
+              "maxProperties": 1
+            },
+            "addressType": {
+              "type": "string",
+              "maxLength": 18,
+              "maxProperties": 1
+            },
+            "custOrgUnitCode": {
+              "type": "string",
+              "maxLength": 15,
+              "maxProperties": 1
+            },
+            "custOrgUnitName": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "dateFrom": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "dateUntil": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "confidentiality": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "additionalLine1": {
+              "type": "string",
+              "maxLength": 50,
+              "maxProperties": 1
+            },
+            "beforeAfterCode": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "additionalLine2": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "addressCountryCode": {
+              "type": "string",
+              "maxLength": 3,
+              "maxProperties": 1
+            },
+            "addressStreet": {
+              "type": "string",
+              "maxLength": 38,
+              "maxProperties": 1
+            },
+            "addressHouseNo": {
+              "type": "string",
+              "maxLength": 5,
+              "maxProperties": 1
+            },
+            "cityCode": {
+              "type": "string",
+              "maxLength": 8,
+              "maxProperties": 1
+            },
+            "cityName": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "postCode": {
+              "type": "string",
+              "maxLength": 16,
+              "maxProperties": 1
+            },
+            "postName": {
+              "type": "string",
+              "maxLength": 32,
+              "maxProperties": 1
+            },
+            "countyCode": {
+              "type": "string",
+              "maxLength": 8,
+              "maxProperties": 1
+            },
+            "countyName": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "districtCode": {
+              "type": "string",
+              "maxLength": 8,
+              "maxProperties": 1
+            },
+            "districtName": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "addressLine1": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "addressLine2": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "addressLine3": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "addressLine4": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "addressLine5": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            }
+          }
+        },
+        "CountryRelationData": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "countryCode": {
+                "type": "string",
+                "maxLength": 3,
+                "minProperties": 1,
+                "maxProperties": 1
+              },
+              "foreignTaxCode": {
+                "type": "string",
+                "maxLength": 32,
+                "maxProperties": 1
+              },
+              "countryRelationType": {
+                "type": "string",
+                "maxLength": 1,
+                "minProperties": 1,
+                "maxProperties": 1
+              },
+              "actionFlag": {
+                "type": "string",
+                "maxLength": 1,
+                "minProperties": 1,
+                "maxProperties": 1
+              }
+            },
+            "required": [
+              "countryCode",
+              "countryRelationType",
+              "actionFlag"
+            ]
+          }
+        },
+        "CitizenData": {
+          "type": "object",
+          "maxProperties": 1,
+          "properties": {
+            "personSurname": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "personFirstName": {
+              "type": "string",
+              "maxLength": 35,
+              "maxProperties": 1
+            },
+            "personMiddleName": {
+              "type": "string",
+              "maxLength": 40,
+              "maxProperties": 1
+            },
+            "genderCode": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "placeOfBirth": {
+              "type": "string",
+              "maxLength": 30,
+              "maxProperties": 1
+            },
+            "dateOfBirth": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "personIdUsage": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "memberSince": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "salutationCode": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "salutationTranslation": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "inheritedTitleCode": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "InheritedTitleTranslation": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "acquiredTitleCode": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "acquiredTitleTranslation": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "memorablePassword": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "documentTypeCode": {
+              "type": "string",
+              "maxLength": 8,
+              "maxProperties": 1
+            },
+            "documentCode": {
+              "type": "string",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "documentNumber": {
+              "type": "string",
+              "maxLength": 18,
+              "maxProperties": 1
+            },
+            "documentIssuedBy": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "documentIssuedDate": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "documentExpiryDate": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "documentDeliveryFlag": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "employeeFlag": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "employer1Id": {
+              "type": "string",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "employer1Name": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "employer1SectorCode": {
+              "type": "string",
+              "maxLength": 5,
+              "maxProperties": 1
+            },
+            "employer2Id": {
+              "type": "string",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "employer2Name": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "employer2SectorCode": {
+              "type": "string",
+              "maxLength": 5,
+              "maxProperties": 1
+            },
+            "employer3Id": {
+              "type": "string",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "employer3Name": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "employer3SectorCode": {
+              "type": "string",
+              "maxLength": 5,
+              "maxProperties": 1
+            }
+          }
+        },
+        "LegalEntityData": {
+          "type": "object",
+          "maxProperties": 1,
+          "properties": {
+            "companyName": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "fullName": {
+              "type": "string",
+              "maxLength": 440,
+              "maxProperties": 1
+            },
+            "code": {
+              "type": "string",
+              "maxLength": 16,
+              "maxProperties": 1
+            },
+            "ownerId": {
+              "type": "string",
+              "maxLength": 16,
+              "maxProperties": 1
+            },
+            "ownerName": {
+              "type": "string",
+              "maxLength": 128,
+              "maxProperties": 1
+            },
+            "ownerId2": {
+              "type": "string",
+              "maxLength": 16,
+              "maxProperties": 1
+            },
+            "personCode": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "activity": {
+              "type": "string",
+              "maxLength": 5,
+              "maxProperties": 1
+            },
+            "mainPhoneNo": {
+              "type": "string",
+              "maxLength": 32,
+              "maxProperties": 1
+            },
+            "mainFaxNo": {
+              "type": "string",
+              "maxLength": 32,
+              "maxProperties": 1
+            },
+            "mainMobilePhoneNo": {
+              "type": "string",
+              "maxLength": 32,
+              "maxProperties": 1
+            },
+            "employer": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "shareholder": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "sharehDomCountry": {
+              "type": "string",
+              "maxLength": 3,
+              "maxProperties": 1
+            },
+            "sharehChainLength": {
+              "type": "integer",
+              "maxLength": 5,
+              "maxProperties": 1
+            },
+            "depositor": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "capitalDomCountry": {
+              "type": "string",
+              "maxLength": 3,
+              "maxProperties": 1
+            },
+            "organizationForm": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "totalIncome": {
+              "type": "number",
+              "maxLength": 17,
+              "maxProperties": 1
+            },
+            "noOfEmployees": {
+              "type": "integer",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "foundationDate": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "bankruptcyDate": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "liquidationDate": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "nonResidentSector": {
+              "type": "string",
+              "maxLength": 4,
+              "maxProperties": 1
+            },
+            "intes": {
+              "type": "string",
+              "maxLength": 4,
+              "maxProperties": 1
+            },
+            "rating": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "gvIndicativeData1": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "gvIndicativeData2": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "gvIndicativeData3": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "gvIndicativeData4": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "gvIndicativeData5": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            },
+            "gvIndicativeData6": {
+              "type": "string",
+              "maxLength": 20,
+              "maxProperties": 1
+            }
+          }
+        },
+        "SocialDemographicData": {
+          "type": "object",
+          "maxProperties": 1,
+          "properties": {
+            "maritalStatusCode": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "personMaidenName": {
+              "type": "string",
+              "maxLength": 64,
+              "maxProperties": 1
+            },
+            "numberOfKeptPersons": {
+              "type": "integer",
+              "maxLength": 5,
+              "maxProperties": 1
+            },
+            "durationOfCurrentEmployment": {
+              "type": "integer",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "durationOfEmployment": {
+              "type": "integer",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "employmentTypeCode": {
+              "type": "string",
+              "maxLength": 2,
+              "maxProperties": 1
+            },
+            "dateFromCurrentEmployment": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "dateToCurrentEmployment": {
+              "type": "string",
+              "format": "date",
+              "maxLength": 10,
+              "maxProperties": 1
+            },
+            "educationLevelCode": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "salaryPensionAmount": {
+              "type": "number",
+              "maxLength": 17,
+              "maxProperties": 1
+            },
+            "salaryPensionCurrencyCode": {
+              "type": "string",
+              "maxLength": 3,
+              "maxProperties": 1
+            },
+            "grossSalaryAmount": {
+              "type": "number",
+              "maxLength": 17,
+              "maxProperties": 1
+            },
+            "grossSalaryCurrencyCode": {
+              "type": "string",
+              "maxLength": 3,
+              "maxProperties": 1
+            },
+            "householdMonthlyExpensesAmount": {
+              "type": "number",
+              "maxLength": 17,
+              "maxProperties": 1
+            },
+            "householdMonthlyExpensesCurrencyCode": {
+              "type": "string",
+              "maxLength": 3,
+              "maxProperties": 1
+            },
+            "previousLoansAmount": {
+              "type": "number",
+              "maxLength": 17,
+              "maxProperties": 1
+            },
+            "previousLoansCurrencyCode": {
+              "type": "string",
+              "maxLength": 3,
+              "maxProperties": 1
+            },
+            "residentialStatusCode": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            },
+            "nationalityCode": {
+              "type": "string",
+              "maxLength": 3,
+              "maxProperties": 1
+            },
+            "timeAtCurrentAddressCode": {
+              "type": "string",
+              "maxLength": 1,
+              "maxProperties": 1
+            }
+          }
+        }
+      },
+      "required": [
+        "headerRequest",
+        "requestInteroperabilityPropertyBlock",
+        "PersonData",
+        "ReusableAddressDetails"
+      ]
+    },
+    "HeaderRequest": {
+      "type": "object",
+      "properties": {
+        "trxCode": {
+          "type": "string",
+          "maxLength": 8,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "userID": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "trxTimeStamp": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 26,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "branchCode": {
+          "type": "string",
+          "maxLength": 8,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "processDate": {
+          "type": "string",
+          "format": "date",
+          "maxLength": 10,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "bankSign": {
+          "type": "string",
+          "maxLength": 2,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "DeliveryChannel": {
+          "type": "string",
+          "maxLength": 8,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "ModuleName": {
+          "type": "string",
+          "maxLength": 18,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "userLock": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 26,
+          "maxProperties": 1
+        },
+        "actionListName": {
+          "type": "string",
+          "maxLength": 64,
+          "maxProperties": 1
+        },
+        "actionListLevel": {
+          "type": "integer",
+          "maxProperties": 1
+        },
+        "actionListFetchSize": {
+          "type": "integer",
+          "maxProperties": 1
+        },
+        "sorting": {
+          "$ref": "#/definitions/Sorting"
+        },
+        "locale": {
+          "type": "string",
+          "maxLength": 11,
+          "maxProperties": 1
+        }
+      },
+      "required": [
+        "trxCode",
+        "userID",
+        "trxTimeStamp",
+        "branchCode",
+        "processDate",
+        "bankSign",
+        "DeliveryChannel",
+        "ModuleName"
+      ]
+    },
+    "RequestInteroperabilityPropertyBlock": {
+      "type": "object",
+      "properties": {
+        "uniqueRequestReference": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestorRequestReference": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestorApplicationName": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestorComponentName": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestorServiceName": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestTimestamp": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 26,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestTimezone": {
+          "type": "string",
+          "maxLength": 8,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestTimezoneOffset": {
+          "type": "string",
+          "maxLength": 6,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestorOrganization": {
+          "type": "string",
+          "maxLength": 32,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestorCompany": {
+          "type": "string",
+          "maxLength": 32,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestorSubsidiary": {
+          "type": "string",
+          "maxLength": 32,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestorOrganizationalUnit": {
+          "type": "string",
+          "maxLength": 64,
+          "maxProperties": 1
+        },
+        "requestorAuthenticationUser": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestorAuthorizationUser": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestorIP": {
+          "type": "string",
+          "maxLength": 46,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestChannel": {
+          "type": "string",
+          "maxLength": 32,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responseChannel": {
+          "type": "string",
+          "maxLength": 32,
+          "minProperties": 1,
+          "maxProperties": 1
+        }
+      },
+      "required": [
+        "uniqueRequestReference",
+        "requestorRequestReference",
+        "requestorApplicationName",
+        "requestorComponentName",
+        "requestorServiceName",
+        "requestTimestamp",
+        "requestTimezone",
+        "requestTimezoneOffset",
+        "requestorOrganization",
+        "requestorCompany",
+        "requestorSubsidiary",
+        "requestorAuthenticationUser",
+        "requestorAuthorizationUser",
+        "requestorIP",
+        "requestChannel",
+        "responseChannel"
+      ]
+    },
+    "Sorting": {
+      "type": "object",
+      "maxProperties": 1,
+      "properties": {
+        "sortBlock": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 64,
+                "minProperties": 1,
+                "maxProperties": 1
+              },
+              "sortAttribute": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "maxLength": 64,
+                      "minProperties": 1,
+                      "maxProperties": 1
+                    },
+                    "sortType": {
+                      "type": "string",
+                      "minProperties": 1,
+                      "maxProperties": 1,
+                      "enum": [
+                        "ASC",
+                        "DESC"
+                      ]
+                    },
+                    "order": {
+                      "type": "string",
+                      "maxLength": 4,
+                      "maxProperties": 1
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "sortType"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "name",
+              "sortAttribute"
+            ]
+          }
+        }
+      },
+      "required": [
+        "sortBlock"
+      ]
+    },
+    "ResponseBody": {
+      "description": "Response Body",
+      "type": "object",
+      "properties": {
+        "headerResponse": {
+          "$ref": "#/definitions/HeaderResponse"
+        },
+        "responseInteroperabilityPropertyBlock": {
+          "$ref": "#/definitions/ResponseInteroperabilityPropertyBlock"
+        },
+        "exceptionInteroperabilityPropertyBlocks": {
+          "$ref": "#/definitions/ExceptionInteroperabilityPropertyBlocks"
+        },
+        "personId": {
+          "type": "string",
+          "maxLength": 20,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "internalId": {
+          "type": "string",
+          "maxLength": 10,
+          "minProperties": 1,
+          "maxProperties": 1
+        }
+      },
+      "required": [
+        "headerResponse",
+        "responseInteroperabilityPropertyBlock",
+        "personId",
+        "internalId"
+      ]
+    },
+    "ExceptionResponseBody": {
+      "description": "Exception Response Body",
+      "type": "object",
+      "properties": {
+        "headerResponse": {
+          "$ref": "#/definitions/HeaderResponse"
+        },
+        "responseInteroperabilityPropertyBlock": {
+          "$ref": "#/definitions/ResponseInteroperabilityPropertyBlock"
+        },
+        "exceptionInteroperabilityPropertyBlocks": {
+          "$ref": "#/definitions/ExceptionInteroperabilityPropertyBlocks"
+        }
+      },
+      "required": [
+        "headerResponse",
+        "responseInteroperabilityPropertyBlock",
+        "exceptionInteroperabilityPropertyBlocks"
+      ]
+    },
+    "HeaderResponse": {
+      "type": "object",
+      "properties": {
+        "Return_Code": {
+          "type": "integer",
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "coreEventTimestamp": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 26,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "messageCode": {
+          "type": "string",
+          "maxLength": 32,
+          "maxProperties": 1
+        },
+        "messageText": {
+          "type": "string",
+          "maxLength": 4096,
+          "maxProperties": 1
+        },
+        "mParams": {
+          "type": "string",
+          "maxLength": 128,
+          "maxProperties": 1
+        },
+        "messageParameters": {
+          "type": "string",
+          "maxLength": 128,
+          "maxProperties": 1
+        },
+        "user_lock": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 26,
+          "maxProperties": 1
+        },
+        "actionListTotalRowNumber": {
+          "type": "integer",
+          "maxProperties": 1
+        }
+      },
+      "required": [
+        "Return_Code",
+        "coreEventTimestamp"
+      ]
+    },
+    "ResponseInteroperabilityPropertyBlock": {
+      "type": "object",
+      "properties": {
+        "uniqueResponseReference": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "uniqueRequestReference": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "requestorRequestReference": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responsorResponseReference": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responsorApplicationName": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responsorComponentName": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responsorServiceName": {
+          "type": "string",
+          "maxLength": 64,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responseTimestamp": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 26,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responseTimezone": {
+          "type": "string",
+          "maxLength": 8,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responseTimezoneOffset": {
+          "type": "string",
+          "maxLength": 6,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responsorOrganization": {
+          "type": "string",
+          "maxLength": 32,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responsorCompany": {
+          "type": "string",
+          "maxLength": 32,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responsorSubsidiary": {
+          "type": "string",
+          "maxLength": 32,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responsorOrganizationalUnit": {
+          "type": "string",
+          "maxLength": 64,
+          "maxProperties": 1
+        },
+        "responsorIP": {
+          "type": "string",
+          "maxLength": 46,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responseResult": {
+          "type": "integer",
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responseHTTPResult": {
+          "type": "integer",
+          "maxProperties": 1
+        },
+        "responseMessage": {
+          "type": "string",
+          "maxLength": 4096,
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responseResultAdditionalData": {
+          "type": "string",
+          "maxLength": 4096,
+          "maxProperties": 1
+        }
+      },
+      "required": [
+        "uniqueResponseReference",
+        "uniqueRequestReference",
+        "requestorRequestReference",
+        "responsorResponseReference",
+        "responsorApplicationName",
+        "responsorComponentName",
+        "responsorServiceName",
+        "responseTimestamp",
+        "responseTimezone",
+        "responseTimezoneOffset",
+        "responsorOrganization",
+        "responsorCompany",
+        "responsorSubsidiary",
+        "responsorIP",
+        "responseResult",
+        "responseMessage"
+      ]
+    },
+    "ExceptionInteroperabilityPropertyBlocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/ExceptionInteroperabilityPropertyBlock"
+      }
+    },
+    "ExceptionInteroperabilityPropertyBlock": {
+      "type": "object",
+      "properties": {
+        "responseException": {
+          "type": "integer",
+          "minProperties": 1,
+          "maxProperties": 1
+        },
+        "responseExceptionMessage": {
+          "type": "string",
+          "maxLength": 4096,
+          "maxProperties": 1
+        },
+        "responseExceptionAdditionalData": {
+          "type": "string",
+          "maxLength": 4096,
+          "maxProperties": 1
+        }
+      },
+      "required": [
+        "responseException"
+      ]
+    }
+  }
+}

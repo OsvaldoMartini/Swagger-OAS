@@ -1,0 +1,239 @@
+swagger: '2.0'
+info:
+  title: Card Gift Info service APIs
+  version: 1.0.0
+host: 'localhost:9443'
+schemes:
+  - https
+security:
+  - basicAuth: []
+securityDefinitions:
+  basicAuth:
+    type: basic
+basePath: /rest/service
+paths:
+  /cardDetails:
+    get:
+      tags:
+        - getCardDetails
+      summary: Return some information about the card
+      operationId: cardDetails
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: serialNumber
+          type: string
+          required: true
+          pattern: '^\d{13}$'
+          description: Numeric ID of the user to get
+        - $ref: '#/parameters/RequestBody'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ResponseBody'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ExceptionResponseBody'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ExceptionResponseBody'
+        '503':
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ExceptionResponseBody'
+parameters:
+  RequestBody:
+    in: body
+    name: Request Body
+    required: true
+    schema:
+      $ref: '#/definitions/PropertiesRequest'
+definitions:
+  PropertiesRequest:
+    description: Request Body
+    type: object
+    properties:
+      headerRequest:
+        $ref: '#/definitions/HeaderRequest'
+    required:
+      - headerRequest
+  HeaderRequest:
+    type: object
+    properties:
+      X-RP-UNIQUE-ID:
+        type: string
+        maxLength: 8
+        minProperties: 1
+        maxProperties: 1
+      X-Client-IP:
+        type: string
+        maxLength: 64
+        minProperties: 1
+        maxProperties: 1
+      timestamp:
+        type: string
+        format: date-time
+        maxLength: 26
+        minProperties: 1
+        maxProperties: 1
+      applicationId:
+        type: string
+        maxLength: 8
+        minProperties: 1
+        maxProperties: 1
+      systemID:
+        type: string
+        maxLength: 2
+        minProperties: 1
+        maxProperties: 1
+    required:
+      - X-RP-UNIQUE-ID
+      - X-Client-IP
+      - timestamp
+      - applicationId
+      - systemID
+  ResponseBody:
+    description: Response Body
+    type: object
+    properties:
+      headerResponse:
+        $ref: '#/definitions/HeaderResponse'
+      status:
+        type: string
+        minLength: 1
+        maxLength: 16
+      code:
+        type: string
+        minLength: 3
+        maxLength: 3
+      message:
+        type: string
+        minLength: 0
+        maxLength: 128
+      errors:
+        $ref: '#/definitions/Errors'
+      giftCardFlag:
+        type: string
+        enum:
+          - 'Y'
+          - 'N'
+      partnerId:
+        type: string
+        minLength: 0
+        maxLength: 16
+      agreementId:
+        type: string
+        minLength: 0
+        maxLength: 16
+      balance:
+        type: string
+        minLength: 0
+        maxLength: 16
+      currency:
+        type: string
+        minLength: 0
+        maxLength: 3
+      msisdn:
+        type: string
+        minLength: 0
+        maxLength: 64
+    required:
+      - status
+      - code
+  HeaderResponse:
+    type: object
+    properties:
+      Return_Code:
+        type: integer
+        minProperties: 1
+        maxProperties: 1
+      coreEventTimestamp:
+        type: string
+        format: date-time
+        maxLength: 26
+        minProperties: 1
+        maxProperties: 1
+      messageCode:
+        type: string
+        maxLength: 32
+        maxProperties: 1
+      messageText:
+        type: string
+        maxLength: 4096
+        maxProperties: 1
+      mParams:
+        type: string
+        maxLength: 128
+        maxProperties: 1
+      messageParameters:
+        type: string
+        maxLength: 128
+        maxProperties: 1
+      user_lock:
+        type: string
+        format: date-time
+        maxLength: 26
+        maxProperties: 1
+      actionListTotalRowNumber:
+        type: integer
+        maxProperties: 1
+    required:
+      - Return_Code
+      - coreEventTimestamp
+  ExceptionResponseBody:
+    description: Exception Response Body
+    type: object
+    properties:
+      headerResponse:
+        $ref: '#/definitions/HeaderResponse'
+    required:
+      - headerResponse
+  Errors:
+    description: The list of errors occurred in the servis execution
+    type: object
+    properties:
+      error:
+        type: array
+        items:
+          $ref: '#/definitions/Error'
+  Error:
+    description: The error occurred in the servies execution
+    type: object
+    properties:
+      errorCode:
+        type: string
+        minLength: 0
+        maxLength: 32
+      severity:
+        type: string
+        minLength: 0
+        maxLength: 3
+      shortDescription:
+        type: string
+        minLength: 0
+        maxLength: 50
+      longDescription:
+        type: string
+        minLength: 0
+        maxLength: 1
+      errorAdditionalInfo:
+        type: string
+        minLength: 0
+        maxLength: 100
+      fieldName:
+        type: string
+        minLength: 0
+        maxLength: 200
+    required:
+      - errorCode
+      - severity

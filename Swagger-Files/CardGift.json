@@ -1,0 +1,225 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"title": "Card Gift Info service APIs",
+		"version": "1.0.0"
+	},
+	"schemes": ["https"],
+	"security": [{
+		"basicAuth": []
+	}],
+	"securityDefinitions": {
+		"basicAuth": {
+			"type": "basic"
+		}
+	},
+	"paths": {
+		"/cardDetails": {
+			"get": {
+				"tags": ["getCardDetails"],
+				"summary": "Return some information about the card",
+				"operationId": "cardDetails",
+				"produces": ["application/json"],
+				"parameters": [{
+					"in": "query",
+					"name": "serialNumber",
+					"required": "true",
+					"schema": {
+						"type": "string",
+						"pattern": "^\\d{13}$"
+					}
+				},
+				{
+					"in": "header",
+					"name": "X-RP-UNIQUE-ID",
+					"required": "true",
+					"type": "string"
+				},
+				{
+					"in": "header",
+					"name": "X-Client-IP",
+					"required": "true",
+					"type": "string"
+				},
+				{
+					"in": "header",
+					"name": "timestamp",
+					"required": "true",
+					"type": "string"
+				},
+				{
+					"in": "header",
+					"name": "applicationId",
+					"required": "true",
+					"type": "string"
+				},
+				{
+					"in": "header",
+					"name": "systemID",
+					"required": "true",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/cardDetailsResponse"
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"schema": {
+							"$ref": "#/definitions/BadResponse"
+						}
+					},
+					"401": {
+						"description": "User unauthorized",
+						"schema": {
+							"$ref": "#/definitions/BadResponse"
+						}
+					},
+					"500": {
+						"description": "Technical error",
+						"schema": {
+							"$ref": "#/definitions/BadResponse"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"BadResponse": {
+			"description": "Used by not OK response status",
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "string",
+					"minLength": 1,
+					"maxLength": 16
+				},
+				"code": {
+					"type": "string",
+					"minLength": 3,
+					"maxLength": 3
+				},
+				"message": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 128
+				},
+				"errors": {
+					"$ref": "#/definitions/Errors"
+				}
+			},
+			"required": ["contextResponse",
+			"errors"]
+		},
+		"Errors": {
+			"description": "The list of errors occurred in the servis execution",
+			"type": "object",
+			"properties": {
+				"error": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Error"
+					}
+				}
+			}
+		},
+		"Error": {
+			"description": "The error occurred in the servies execution",
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 32
+				},
+				"severity": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 3
+				},
+				"shortDescription": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 50
+				},
+				"longDescription": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 1
+				},
+				"errorAdditionalInfo": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 100
+				},
+				"fieldName": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 200
+				}
+			},
+			"required": ["errorCode",
+			"severity"]
+		},
+		"cardDetailsResponse": {
+			"description": "The response after execution of cardDetails",
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "string",
+					"minLength": 1,
+					"maxLength": 16
+				},
+				"code": {
+					"type": "string",
+					"minLength": 3,
+					"maxLength": 3
+				},
+				"message": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 128
+				},
+				"errors": {
+					"$ref": "#/definitions/Errors"
+				},
+				"giftCardFlag": {
+					"type": "string",
+					"enum": ["Y",
+					"N"]
+				},
+				"partnerId": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 16
+				},
+				"agreementId": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 16
+				},
+				"balance": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 16
+				},
+				"currency": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 3
+				},
+				"msisdn": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 64
+				}
+			},
+			"required": ["status",
+			"code"]
+		}
+	}
+}
