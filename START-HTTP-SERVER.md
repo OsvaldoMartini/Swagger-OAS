@@ -1,0 +1,5 @@
+### Run HTTP-Server
+
+````
+	http-server -a 127.0.0.1 -p 9999 swagger-editor
+````
