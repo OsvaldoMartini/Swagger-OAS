@@ -16,7 +16,6 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.threeten.bp.LocalDate;
-import org.threeten.bp.OffsetDateTime;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -57,7 +56,7 @@ public class ClassRequestBody   {
   private String personId = null;
 
   @JsonProperty("assessmentDate")
-  private OffsetDateTime assessmentDate = null;
+  private String assessmentDate = null;
 
   @JsonProperty("issuer")
   private String issuer = null;
@@ -380,7 +379,7 @@ public class ClassRequestBody   {
     this.personId = personId;
   }
 
-  public ClassRequestBody assessmentDate(OffsetDateTime assessmentDate) {
+  public ClassRequestBody assessmentDate(String assessmentDate) {
     this.assessmentDate = assessmentDate;
     return this;
   }
@@ -394,11 +393,11 @@ public class ClassRequestBody   {
 
   @Valid
 
-  public OffsetDateTime getAssessmentDate() {
+  public String getAssessmentDate() {
     return assessmentDate;
   }
 
-  public void setAssessmentDate(OffsetDateTime assessmentDate) {
+  public void setAssessmentDate(String assessmentDate) {
     this.assessmentDate = assessmentDate;
   }
 
