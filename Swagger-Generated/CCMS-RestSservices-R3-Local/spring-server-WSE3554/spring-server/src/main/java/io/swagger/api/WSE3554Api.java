@@ -6,7 +6,7 @@
 package io.swagger.api;
 
 import io.swagger.model.ExceptionResponseBody;
-import io.swagger.model.WS2I45_RequestBody;
+import io.swagger.model.WSE3554_RequestBody;
 import io.swagger.model.ResponseBody;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -23,14 +23,14 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-07T13:56:37.457Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-09T14:22:50.953Z")
 
-@Api(value = "WS2I45", description = "the WS2I45 API")
-public interface WS2I45Api {
+@Api(value = "WSE3554", description = "the WSE3554 API")
+public interface WSE3554Api {
 
-    @ApiOperation(value = "", nickname = "wS2I45", notes = "", response = ResponseBody.class, authorizations = {
+    @ApiOperation(value = "", nickname = "wSE3554", notes = "", response = ResponseBody.class, authorizations = {
         @Authorization(value = "basicAuth")
-    }, tags={ "WS2I45", })
+    }, tags={ "WSE3554", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseBody.class),
         @ApiResponse(code = 400, message = "Bad Request", response = ExceptionResponseBody.class),
@@ -39,10 +39,10 @@ public interface WS2I45Api {
         @ApiResponse(code = 404, message = "Not Found"),
         @ApiResponse(code = 500, message = "Internal Server Error", response = ExceptionResponseBody.class),
         @ApiResponse(code = 503, message = "Service Unavailable", response = ExceptionResponseBody.class) })
-    @RequestMapping(value = "/WS2I45",
+    @RequestMapping(value = "/WSE3554",
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<ResponseBody> wS2I45(@ApiParam(value = "" ,required=true )  @Valid @RequestBody WS2I45_RequestBody requestBody);
+    ResponseEntity<ResponseBody> wSE3554(@ApiParam(value = "" ,required=true )  @Valid @RequestBody WSE3554_RequestBody requestBody);
 
 }

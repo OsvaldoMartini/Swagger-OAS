@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20191209 16:58:57.147" rpa="false">
+<suite id="s1" name="Monitoring-Sites" source="C:\Martini\Projects\Swagger-OAS\Monitoring-Sites\Monitoring-Sites.robot">
+<test id="s1-t1" name="Calling python script">
+<kw name="Run Process" library="Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>python</arg>
+<arg>/Python Scripts/helloworld.py</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20191209 16:58:57.509" level="INFO">Starting process:
+python "/Python Scripts/helloworld.py"</msg>
+<msg timestamp="20191209 16:58:57.515" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20191209 16:58:57.614" level="INFO">Process completed.</msg>
+<msg timestamp="20191209 16:58:57.614" level="INFO">${result} = &lt;result object with rc 2&gt;</msg>
+<status status="PASS" starttime="20191209 16:58:57.509" endtime="20191209 16:58:57.614"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${result.rc} | 0</arg>
+</arguments>
+<msg timestamp="20191209 16:58:57.615" level="FAIL">Keyword 'BuiltIn.Should Be Equal As Integers' expected 2 to 5 arguments, got 1.</msg>
+<status status="FAIL" starttime="20191209 16:58:57.615" endtime="20191209 16:58:57.615"></status>
+</kw>
+<status status="FAIL" starttime="20191209 16:58:57.508" endtime="20191209 16:58:57.616" critical="yes">Keyword 'BuiltIn.Should Be Equal As Integers' expected 2 to 5 arguments, got 1.</status>
+</test>
+<test id="s1-t2" name="Browser must open with Swagger Editor and Sprint Cloud">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://localhost:9999/index.html</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20191209 16:58:57.619" level="INFO">Opening browser 'chrome' to base url 'http://localhost:9999/index.html'.</msg>
+<status status="PASS" starttime="20191209 16:58:57.618" endtime="20191209 16:59:02.459"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Swagger Editor</arg>
+</arguments>
+<status status="PASS" starttime="20191209 16:59:02.464" endtime="20191209 16:59:02.591"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.open('http://localhost:8761/');</arg>
+</arguments>
+<msg timestamp="20191209 16:59:02.593" level="INFO">Executing JavaScript:
+window.open('http://localhost:8761/');
+Without any arguments.</msg>
+<status status="PASS" starttime="20191209 16:59:02.592" endtime="20191209 16:59:02.645"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.open('http://localhost:8985/hystrix/monitor?stream=http://localhost:8987/');</arg>
+</arguments>
+<msg timestamp="20191209 16:59:02.647" level="INFO">Executing JavaScript:
+window.open('http://localhost:8985/hystrix/monitor?stream=http://localhost:8987/');
+Without any arguments.</msg>
+<status status="PASS" starttime="20191209 16:59:02.646" endtime="20191209 16:59:02.686"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.open('http://localhost:9393/dashboard/index.html/');</arg>
+</arguments>
+<msg timestamp="20191209 16:59:02.712" level="INFO">Executing JavaScript:
+window.open('http://localhost:9393/dashboard/index.html/');
+Without any arguments.</msg>
+<status status="PASS" starttime="20191209 16:59:02.710" endtime="20191209 16:59:02.772"></status>
+</kw>
+<doc>This is some basic info about the test</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" starttime="20191209 16:58:57.617" endtime="20191209 16:59:02.773" critical="yes"></status>
+</test>
+<doc>This is some basic info about the whole suite</doc>
+<status status="FAIL" starttime="20191209 16:58:57.152" endtime="20191209 16:59:02.801"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="1" id="s1" name="Monitoring-Sites">Monitoring-Sites</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

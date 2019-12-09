@@ -12,7 +12,7 @@ Library  Process
 *** Test Cases ***
 Calling python script
 	${result}=  run process  python  /Python Scripts/helloworld.py
-	Should be equal as integers  ${result.rc} | 0
+	Should be equal as integers  ${result.rc}	0
 	Should be equal as strings  ${result.stdout}  hello, world
 
 Browser must open with Swagger Editor and Sprint Cloud
@@ -26,10 +26,12 @@ Browser must open with Swagger Editor and Sprint Cloud
     #Wait Until Page Contains Element  xpath=//*[@id="one"]/div/h1[1]
     #Page Contains Element  System Status
 	
-	Execute Javascript   window.open('http://localhost:8985/hystrix/monitor?stream=http://localhost:8987/');
+	Execute Javascript   window.open('http://localhost:8985/hystrix/monitor?stream=http://localhost:8987');
 	#Wait Until Page Contains  Hystrix Stream
     #Wait Until Page Contains Element  xpath=//*[@id="one"]/div/h1[1]
     #Page Contains Element  Hystrix Stream
+
+	Execute Javascript   window.open('http://localhost:9393/dashboard/index.html');
 	
 	
 *** Keywords ***
