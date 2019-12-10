@@ -16,7 +16,6 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.threeten.bp.LocalDate;
-import org.threeten.bp.OffsetDateTime;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -28,7 +27,7 @@ import javax.validation.constraints.*;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-07T13:56:37.457Z")
 
-public class ClassRequestBody   {
+public class WS2I45_RequestBody   {
   @JsonProperty("headerRequest")
   private HeaderRequest headerRequest = null;
 
@@ -57,7 +56,7 @@ public class ClassRequestBody   {
   private String personId = null;
 
   @JsonProperty("assessmentDate")
-  private OffsetDateTime assessmentDate = null;
+  private String assessmentDate = null;
 
   @JsonProperty("issuer")
   private String issuer = null;
@@ -185,7 +184,7 @@ public class ClassRequestBody   {
   @JsonProperty("deoLastRequestDate")
   private LocalDate deoLastRequestDate = null;
 
-  public ClassRequestBody headerRequest(HeaderRequest headerRequest) {
+  public WS2I45_RequestBody headerRequest(HeaderRequest headerRequest) {
     this.headerRequest = headerRequest;
     return this;
   }
@@ -207,7 +206,7 @@ public class ClassRequestBody   {
     this.headerRequest = headerRequest;
   }
 
-  public ClassRequestBody requestInteroperabilityPropertyBlock(RequestInteroperabilityPropertyBlock requestInteroperabilityPropertyBlock) {
+  public WS2I45_RequestBody requestInteroperabilityPropertyBlock(RequestInteroperabilityPropertyBlock requestInteroperabilityPropertyBlock) {
     this.requestInteroperabilityPropertyBlock = requestInteroperabilityPropertyBlock;
     return this;
   }
@@ -229,7 +228,7 @@ public class ClassRequestBody   {
     this.requestInteroperabilityPropertyBlock = requestInteroperabilityPropertyBlock;
   }
 
-  public ClassRequestBody personRatings(RequestBodyPersonRatings personRatings) {
+  public WS2I45_RequestBody personRatings(RequestBodyPersonRatings personRatings) {
     this.personRatings = personRatings;
     return this;
   }
@@ -250,7 +249,7 @@ public class ClassRequestBody   {
     this.personRatings = personRatings;
   }
 
-  public ClassRequestBody decisions(RequestBodyDecisions decisions) {
+  public WS2I45_RequestBody decisions(RequestBodyDecisions decisions) {
     this.decisions = decisions;
     return this;
   }
@@ -272,12 +271,12 @@ public class ClassRequestBody   {
     this.decisions = decisions;
   }
 
-  public ClassRequestBody nationalityList(List<RequestBodyNationalityList> nationalityList) {
+  public WS2I45_RequestBody nationalityList(List<RequestBodyNationalityList> nationalityList) {
     this.nationalityList = nationalityList;
     return this;
   }
 
-  public ClassRequestBody addNationalityListItem(RequestBodyNationalityList nationalityListItem) {
+  public WS2I45_RequestBody addNationalityListItem(RequestBodyNationalityList nationalityListItem) {
     if (this.nationalityList == null) {
       this.nationalityList = new ArrayList<RequestBodyNationalityList>();
     }
@@ -301,12 +300,12 @@ public class ClassRequestBody   {
     this.nationalityList = nationalityList;
   }
 
-  public ClassRequestBody deo(List<RequestBodyDeo> deo) {
+  public WS2I45_RequestBody deo(List<RequestBodyDeo> deo) {
     this.deo = deo;
     return this;
   }
 
-  public ClassRequestBody addDeoItem(RequestBodyDeo deoItem) {
+  public WS2I45_RequestBody addDeoItem(RequestBodyDeo deoItem) {
     if (this.deo == null) {
       this.deo = new ArrayList<RequestBodyDeo>();
     }
@@ -330,12 +329,12 @@ public class ClassRequestBody   {
     this.deo = deo;
   }
 
-  public ClassRequestBody lastAssessmentsBlock(List<RequestBodyLastAssessmentsBlock> lastAssessmentsBlock) {
+  public WS2I45_RequestBody lastAssessmentsBlock(List<RequestBodyLastAssessmentsBlock> lastAssessmentsBlock) {
     this.lastAssessmentsBlock = lastAssessmentsBlock;
     return this;
   }
 
-  public ClassRequestBody addLastAssessmentsBlockItem(RequestBodyLastAssessmentsBlock lastAssessmentsBlockItem) {
+  public WS2I45_RequestBody addLastAssessmentsBlockItem(RequestBodyLastAssessmentsBlock lastAssessmentsBlockItem) {
     if (this.lastAssessmentsBlock == null) {
       this.lastAssessmentsBlock = new ArrayList<RequestBodyLastAssessmentsBlock>();
     }
@@ -359,7 +358,7 @@ public class ClassRequestBody   {
     this.lastAssessmentsBlock = lastAssessmentsBlock;
   }
 
-  public ClassRequestBody personId(String personId) {
+  public WS2I45_RequestBody personId(String personId) {
     this.personId = personId;
     return this;
   }
@@ -380,7 +379,7 @@ public class ClassRequestBody   {
     this.personId = personId;
   }
 
-  public ClassRequestBody assessmentDate(OffsetDateTime assessmentDate) {
+  public WS2I45_RequestBody assessmentDate(String assessmentDate) {
     this.assessmentDate = assessmentDate;
     return this;
   }
@@ -394,15 +393,15 @@ public class ClassRequestBody   {
 
   @Valid
 
-  public OffsetDateTime getAssessmentDate() {
+  public String getAssessmentDate() {
     return assessmentDate;
   }
 
-  public void setAssessmentDate(OffsetDateTime assessmentDate) {
+  public void setAssessmentDate(String assessmentDate) {
     this.assessmentDate = assessmentDate;
   }
 
-  public ClassRequestBody issuer(String issuer) {
+  public WS2I45_RequestBody issuer(String issuer) {
     this.issuer = issuer;
     return this;
   }
@@ -423,7 +422,7 @@ public class ClassRequestBody   {
     this.issuer = issuer;
   }
 
-  public ClassRequestBody decisioningVersion(String decisioningVersion) {
+  public WS2I45_RequestBody decisioningVersion(String decisioningVersion) {
     this.decisioningVersion = decisioningVersion;
     return this;
   }
@@ -443,7 +442,7 @@ public class ClassRequestBody   {
     this.decisioningVersion = decisioningVersion;
   }
 
-  public ClassRequestBody scenarioType(String scenarioType) {
+  public WS2I45_RequestBody scenarioType(String scenarioType) {
     this.scenarioType = scenarioType;
     return this;
   }
@@ -464,7 +463,7 @@ public class ClassRequestBody   {
     this.scenarioType = scenarioType;
   }
 
-  public ClassRequestBody threasholdApplicationScore(Integer threasholdApplicationScore) {
+  public WS2I45_RequestBody threasholdApplicationScore(Integer threasholdApplicationScore) {
     this.threasholdApplicationScore = threasholdApplicationScore;
     return this;
   }
@@ -484,7 +483,7 @@ public class ClassRequestBody   {
     this.threasholdApplicationScore = threasholdApplicationScore;
   }
 
-  public ClassRequestBody applicationScore(Integer applicationScore) {
+  public WS2I45_RequestBody applicationScore(Integer applicationScore) {
     this.applicationScore = applicationScore;
     return this;
   }
@@ -504,7 +503,7 @@ public class ClassRequestBody   {
     this.applicationScore = applicationScore;
   }
 
-  public ClassRequestBody applicationScoreLevel(String applicationScoreLevel) {
+  public WS2I45_RequestBody applicationScoreLevel(String applicationScoreLevel) {
     this.applicationScoreLevel = applicationScoreLevel;
     return this;
   }
@@ -524,7 +523,7 @@ public class ClassRequestBody   {
     this.applicationScoreLevel = applicationScoreLevel;
   }
 
-  public ClassRequestBody salaryCertificateReceived(String salaryCertificateReceived) {
+  public WS2I45_RequestBody salaryCertificateReceived(String salaryCertificateReceived) {
     this.salaryCertificateReceived = salaryCertificateReceived;
     return this;
   }
@@ -544,7 +543,7 @@ public class ClassRequestBody   {
     this.salaryCertificateReceived = salaryCertificateReceived;
   }
 
-  public ClassRequestBody incomeConfirmedByPhone(String incomeConfirmedByPhone) {
+  public WS2I45_RequestBody incomeConfirmedByPhone(String incomeConfirmedByPhone) {
     this.incomeConfirmedByPhone = incomeConfirmedByPhone;
     return this;
   }
@@ -564,7 +563,7 @@ public class ClassRequestBody   {
     this.incomeConfirmedByPhone = incomeConfirmedByPhone;
   }
 
-  public ClassRequestBody commercialRegisterDone(String commercialRegisterDone) {
+  public WS2I45_RequestBody commercialRegisterDone(String commercialRegisterDone) {
     this.commercialRegisterDone = commercialRegisterDone;
     return this;
   }
@@ -584,7 +583,7 @@ public class ClassRequestBody   {
     this.commercialRegisterDone = commercialRegisterDone;
   }
 
-  public ClassRequestBody taxFormReceived(String taxFormReceived) {
+  public WS2I45_RequestBody taxFormReceived(String taxFormReceived) {
     this.taxFormReceived = taxFormReceived;
     return this;
   }
@@ -604,7 +603,7 @@ public class ClassRequestBody   {
     this.taxFormReceived = taxFormReceived;
   }
 
-  public ClassRequestBody authenticatedCopyIdReceived(String authenticatedCopyIdReceived) {
+  public WS2I45_RequestBody authenticatedCopyIdReceived(String authenticatedCopyIdReceived) {
     this.authenticatedCopyIdReceived = authenticatedCopyIdReceived;
     return this;
   }
@@ -624,7 +623,7 @@ public class ClassRequestBody   {
     this.authenticatedCopyIdReceived = authenticatedCopyIdReceived;
   }
 
-  public ClassRequestBody addressConfirmed(String addressConfirmed) {
+  public WS2I45_RequestBody addressConfirmed(String addressConfirmed) {
     this.addressConfirmed = addressConfirmed;
     return this;
   }
@@ -644,7 +643,7 @@ public class ClassRequestBody   {
     this.addressConfirmed = addressConfirmed;
   }
 
-  public ClassRequestBody employmentType(String employmentType) {
+  public WS2I45_RequestBody employmentType(String employmentType) {
     this.employmentType = employmentType;
     return this;
   }
@@ -664,7 +663,7 @@ public class ClassRequestBody   {
     this.employmentType = employmentType;
   }
 
-  public ClassRequestBody income(BigDecimal income) {
+  public WS2I45_RequestBody income(BigDecimal income) {
     this.income = income;
     return this;
   }
@@ -685,7 +684,7 @@ public class ClassRequestBody   {
     this.income = income;
   }
 
-  public ClassRequestBody ownAssetsFrom(BigDecimal ownAssetsFrom) {
+  public WS2I45_RequestBody ownAssetsFrom(BigDecimal ownAssetsFrom) {
     this.ownAssetsFrom = ownAssetsFrom;
     return this;
   }
@@ -706,7 +705,7 @@ public class ClassRequestBody   {
     this.ownAssetsFrom = ownAssetsFrom;
   }
 
-  public ClassRequestBody ownAssetsTo(BigDecimal ownAssetsTo) {
+  public WS2I45_RequestBody ownAssetsTo(BigDecimal ownAssetsTo) {
     this.ownAssetsTo = ownAssetsTo;
     return this;
   }
@@ -727,7 +726,7 @@ public class ClassRequestBody   {
     this.ownAssetsTo = ownAssetsTo;
   }
 
-  public ClassRequestBody numberChildren(Integer numberChildren) {
+  public WS2I45_RequestBody numberChildren(Integer numberChildren) {
     this.numberChildren = numberChildren;
     return this;
   }
@@ -747,7 +746,7 @@ public class ClassRequestBody   {
     this.numberChildren = numberChildren;
   }
 
-  public ClassRequestBody housingCosts(BigDecimal housingCosts) {
+  public WS2I45_RequestBody housingCosts(BigDecimal housingCosts) {
     this.housingCosts = housingCosts;
     return this;
   }
@@ -768,7 +767,7 @@ public class ClassRequestBody   {
     this.housingCosts = housingCosts;
   }
 
-  public ClassRequestBody permit(String permit) {
+  public WS2I45_RequestBody permit(String permit) {
     this.permit = permit;
     return this;
   }
@@ -788,7 +787,7 @@ public class ClassRequestBody   {
     this.permit = permit;
   }
 
-  public ClassRequestBody permitSince(LocalDate permitSince) {
+  public WS2I45_RequestBody permitSince(LocalDate permitSince) {
     this.permitSince = permitSince;
     return this;
   }
@@ -809,7 +808,7 @@ public class ClassRequestBody   {
     this.permitSince = permitSince;
   }
 
-  public ClassRequestBody behaviorCreditRiskScore(Integer behaviorCreditRiskScore) {
+  public WS2I45_RequestBody behaviorCreditRiskScore(Integer behaviorCreditRiskScore) {
     this.behaviorCreditRiskScore = behaviorCreditRiskScore;
     return this;
   }
@@ -829,7 +828,7 @@ public class ClassRequestBody   {
     this.behaviorCreditRiskScore = behaviorCreditRiskScore;
   }
 
-  public ClassRequestBody behaviorCreditRiskScoreLevel(String behaviorCreditRiskScoreLevel) {
+  public WS2I45_RequestBody behaviorCreditRiskScoreLevel(String behaviorCreditRiskScoreLevel) {
     this.behaviorCreditRiskScoreLevel = behaviorCreditRiskScoreLevel;
     return this;
   }
@@ -849,7 +848,7 @@ public class ClassRequestBody   {
     this.behaviorCreditRiskScoreLevel = behaviorCreditRiskScoreLevel;
   }
 
-  public ClassRequestBody valueAtRisk(BigDecimal valueAtRisk) {
+  public WS2I45_RequestBody valueAtRisk(BigDecimal valueAtRisk) {
     this.valueAtRisk = valueAtRisk;
     return this;
   }
@@ -870,7 +869,7 @@ public class ClassRequestBody   {
     this.valueAtRisk = valueAtRisk;
   }
 
-  public ClassRequestBody CLV(Integer CLV) {
+  public WS2I45_RequestBody CLV(Integer CLV) {
     this.CLV = CLV;
     return this;
   }
@@ -890,7 +889,7 @@ public class ClassRequestBody   {
     this.CLV = CLV;
   }
 
-  public ClassRequestBody clVLevel(String clVLevel) {
+  public WS2I45_RequestBody clVLevel(String clVLevel) {
     this.clVLevel = clVLevel;
     return this;
   }
@@ -910,7 +909,7 @@ public class ClassRequestBody   {
     this.clVLevel = clVLevel;
   }
 
-  public ClassRequestBody avgUtilizationRate(BigDecimal avgUtilizationRate) {
+  public WS2I45_RequestBody avgUtilizationRate(BigDecimal avgUtilizationRate) {
     this.avgUtilizationRate = avgUtilizationRate;
     return this;
   }
@@ -931,7 +930,7 @@ public class ClassRequestBody   {
     this.avgUtilizationRate = avgUtilizationRate;
   }
 
-  public ClassRequestBody creditClientSince(LocalDate creditClientSince) {
+  public WS2I45_RequestBody creditClientSince(LocalDate creditClientSince) {
     this.creditClientSince = creditClientSince;
     return this;
   }
@@ -952,7 +951,7 @@ public class ClassRequestBody   {
     this.creditClientSince = creditClientSince;
   }
 
-  public ClassRequestBody balance(BigDecimal balance) {
+  public WS2I45_RequestBody balance(BigDecimal balance) {
     this.balance = balance;
     return this;
   }
@@ -973,7 +972,7 @@ public class ClassRequestBody   {
     this.balance = balance;
   }
 
-  public ClassRequestBody delinquency(String delinquency) {
+  public WS2I45_RequestBody delinquency(String delinquency) {
     this.delinquency = delinquency;
     return this;
   }
@@ -993,7 +992,7 @@ public class ClassRequestBody   {
     this.delinquency = delinquency;
   }
 
-  public ClassRequestBody actConFinLiability(BigDecimal actConFinLiability) {
+  public WS2I45_RequestBody actConFinLiability(BigDecimal actConFinLiability) {
     this.actConFinLiability = actConFinLiability;
     return this;
   }
@@ -1014,7 +1013,7 @@ public class ClassRequestBody   {
     this.actConFinLiability = actConFinLiability;
   }
 
-  public ClassRequestBody actLiability(BigDecimal actLiability) {
+  public WS2I45_RequestBody actLiability(BigDecimal actLiability) {
     this.actLiability = actLiability;
     return this;
   }
@@ -1035,7 +1034,7 @@ public class ClassRequestBody   {
     this.actLiability = actLiability;
   }
 
-  public ClassRequestBody actTempLiability(BigDecimal actTempLiability) {
+  public WS2I45_RequestBody actTempLiability(BigDecimal actTempLiability) {
     this.actTempLiability = actTempLiability;
     return this;
   }
@@ -1056,7 +1055,7 @@ public class ClassRequestBody   {
     this.actTempLiability = actTempLiability;
   }
 
-  public ClassRequestBody clientRiskStatuses(String clientRiskStatuses) {
+  public WS2I45_RequestBody clientRiskStatuses(String clientRiskStatuses) {
     this.clientRiskStatuses = clientRiskStatuses;
     return this;
   }
@@ -1076,7 +1075,7 @@ public class ClassRequestBody   {
     this.clientRiskStatuses = clientRiskStatuses;
   }
 
-  public ClassRequestBody clientRiskReasons(String clientRiskReasons) {
+  public WS2I45_RequestBody clientRiskReasons(String clientRiskReasons) {
     this.clientRiskReasons = clientRiskReasons;
     return this;
   }
@@ -1096,7 +1095,7 @@ public class ClassRequestBody   {
     this.clientRiskReasons = clientRiskReasons;
   }
 
-  public ClassRequestBody personRoleSubType(String personRoleSubType) {
+  public WS2I45_RequestBody personRoleSubType(String personRoleSubType) {
     this.personRoleSubType = personRoleSubType;
     return this;
   }
@@ -1116,7 +1115,7 @@ public class ClassRequestBody   {
     this.personRoleSubType = personRoleSubType;
   }
 
-  public ClassRequestBody personSegmentation(String personSegmentation) {
+  public WS2I45_RequestBody personSegmentation(String personSegmentation) {
     this.personSegmentation = personSegmentation;
     return this;
   }
@@ -1136,7 +1135,7 @@ public class ClassRequestBody   {
     this.personSegmentation = personSegmentation;
   }
 
-  public ClassRequestBody crifFound(String crifFound) {
+  public WS2I45_RequestBody crifFound(String crifFound) {
     this.crifFound = crifFound;
     return this;
   }
@@ -1156,7 +1155,7 @@ public class ClassRequestBody   {
     this.crifFound = crifFound;
   }
 
-  public ClassRequestBody zekFound(String zekFound) {
+  public WS2I45_RequestBody zekFound(String zekFound) {
     this.zekFound = zekFound;
     return this;
   }
@@ -1176,7 +1175,7 @@ public class ClassRequestBody   {
     this.zekFound = zekFound;
   }
 
-  public ClassRequestBody deoCompleted(String deoCompleted) {
+  public WS2I45_RequestBody deoCompleted(String deoCompleted) {
     this.deoCompleted = deoCompleted;
     return this;
   }
@@ -1196,7 +1195,7 @@ public class ClassRequestBody   {
     this.deoCompleted = deoCompleted;
   }
 
-  public ClassRequestBody deoNegativeManual(String deoNegativeManual) {
+  public WS2I45_RequestBody deoNegativeManual(String deoNegativeManual) {
     this.deoNegativeManual = deoNegativeManual;
     return this;
   }
@@ -1216,7 +1215,7 @@ public class ClassRequestBody   {
     this.deoNegativeManual = deoNegativeManual;
   }
 
-  public ClassRequestBody reasonBlackFile(String reasonBlackFile) {
+  public WS2I45_RequestBody reasonBlackFile(String reasonBlackFile) {
     this.reasonBlackFile = reasonBlackFile;
     return this;
   }
@@ -1236,7 +1235,7 @@ public class ClassRequestBody   {
     this.reasonBlackFile = reasonBlackFile;
   }
 
-  public ClassRequestBody deoLastRequestDate(LocalDate deoLastRequestDate) {
+  public WS2I45_RequestBody deoLastRequestDate(LocalDate deoLastRequestDate) {
     this.deoLastRequestDate = deoLastRequestDate;
     return this;
   }
@@ -1266,7 +1265,7 @@ public class ClassRequestBody   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ClassRequestBody requestBody = (ClassRequestBody) o;
+    WS2I45_RequestBody requestBody = (WS2I45_RequestBody) o;
     return Objects.equals(this.headerRequest, requestBody.headerRequest) &&
         Objects.equals(this.requestInteroperabilityPropertyBlock, requestBody.requestInteroperabilityPropertyBlock) &&
         Objects.equals(this.personRatings, requestBody.personRatings) &&
@@ -1328,7 +1327,7 @@ public class ClassRequestBody   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ClassRequestBody {\n");
+    sb.append("class WS2I45_RequestBody {\n");
     
     sb.append("    headerRequest: ").append(toIndentedString(headerRequest)).append("\n");
     sb.append("    requestInteroperabilityPropertyBlock: ").append(toIndentedString(requestInteroperabilityPropertyBlock)).append("\n");

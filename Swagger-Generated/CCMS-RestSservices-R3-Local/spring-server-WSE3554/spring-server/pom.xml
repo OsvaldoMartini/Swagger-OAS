@@ -2,12 +2,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.swagger</groupId>
-    <artifactId>swagger-ccms-ws2i45</artifactId>
+    <artifactId>swagger-ccms-wse3554</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-	<name>Swagger-CCMS-RestServices-WS2I45</name>
-	<description>Swagger CCMS RestServices WS2I45</description>
+	<name>Swagger-CCMS-RestServices-WSE3554</name>
+	<description>Swagger CCMS RestServices WSE3554</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

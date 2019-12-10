@@ -1,7 +1,7 @@
 package io.swagger.api;
 
 import io.swagger.model.ExceptionResponseBody;
-import io.swagger.model.ClassRequestBody;
+import io.swagger.model.WS2I45_RequestBody;
 import io.swagger.model.ResponseBody;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
@@ -39,7 +39,7 @@ public class WS2I45ApiController implements WS2I45Api {
         this.request = request;
     }
 
-    public ResponseEntity<ResponseBody> wS2I45(@ApiParam(value = "" ,required=true )  @Valid @RequestBody ClassRequestBody requestBody) {
+    public ResponseEntity<ResponseBody> wS2I45(@ApiParam(value = "" ,required=true )  @Valid @RequestBody WS2I45_RequestBody requestBody) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
