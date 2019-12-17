@@ -1,0 +1,26 @@
+{
+  "basePath": "/rest/service",
+  "host": "localhost:9443",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/WS1J02": {
+      "parameters": [],
+      "post": {
+        "operationId": "WS1J02 add person Swiss",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "swagger": "2.0"
+}

@@ -1,0 +1,112 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "host": "localhost:8181",
+  "basePath": "/cxf",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/ConvenienceCardWebsiteRSServiceCH/accountRegistration": {
+      "parameters": [
+        {
+          "default": "",
+          "in": "query",
+          "name": "_wadl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "post": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "accountRegistration"
+      }
+    },
+    "/ConvenienceCardWebsiteRSServiceCH/checkCardAndMsisdn": {
+      "parameters": [
+        {
+          "default": "",
+          "in": "query",
+          "name": "_wadl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "post": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "checkCardAndMsisdn"
+      }
+    },
+    "/ConvenienceCardWebsiteRSServiceCH/checkOTP": {
+      "parameters": [
+        {
+          "default": "",
+          "in": "query",
+          "name": "_wadl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "post": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "checkOTP"
+      }
+    },
+    "/ConvenienceCardWebsiteRSServiceCH/getConvenienceCardOverview": {
+      "parameters": [
+        {
+          "default": "",
+          "in": "query",
+          "name": "userId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "getConvenienceCardOverview"
+      }
+    },
+    "/ConvenienceCardWebsiteRSServiceCH/profile": {
+      "parameters": [
+        {
+          "default": "",
+          "in": "query",
+          "name": "userId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "getProfile"
+      }
+    }
+  }
+}
